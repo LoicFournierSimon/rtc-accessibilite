@@ -265,20 +265,21 @@
         /* CV Hero intro */
         /* QR code block */
         .cv-qr {
-            display: flex; flex-direction: column; align-items: center; gap: 4px;
-            flex-shrink: 0;
+            display: flex; flex-direction: column; align-items: center; gap: 5px;
+            flex-shrink: 0; text-decoration: none;
         }
         .cv-qr img {
-            width: 72px; height: 72px;
+            width: 80px; height: 80px;
             border-radius: 8px;
             border: 1px solid var(--border);
+            display: block;
         }
         .cv-qr span {
             font-size: 10px; color: var(--text-2); font-family: var(--font-mono);
-            white-space: nowrap;
+            white-space: nowrap; text-align: center;
         }
         @media (max-width: 768px) {
-            .cv-qr img { width: 56px; height: 56px; }
+            .cv-qr img { width: 64px; height: 64px; }
         }
 
         .cv-hero {
@@ -370,7 +371,9 @@
         .btn-dl-large:hover { background: var(--primary-h); }
         .btn-dl-large svg { width: 18px; height: 18px; }
 
-        /* ── TAB À PROPOS ── */
+        /* ── TAB LE RTC ── */
+        #tab-rtc { overflow-y: auto; background: var(--bg); }
+        /* legacy alias kept for safety */
         #tab-apropos { overflow-y: auto; background: var(--bg); }
 
         .apropos-inner {
@@ -545,7 +548,7 @@
         </button>
         <button class="tab-btn" data-tab="carte" onclick="switchTab('carte')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
-            Projet carto
+            Analyse SIG
         </button>
         <button class="tab-btn" data-tab="rtc" onclick="switchTab('rtc')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
@@ -762,7 +765,7 @@
                 <!-- Pertinence de l'analyse -->
                 <div class="apropos-card" style="border-color:rgba(99,102,241,0.2);background:rgba(99,102,241,0.03)">
                     <h3>Lien avec cette analyse</h3>
-                    <p>La carte présentée dans l'onglet <strong>Projet carto</strong> permet d'identifier les <strong>zones urbaines denses insuffisamment couvertes</strong> en transport en commun — un outil directement pertinent pour orienter les décisions de planification du RTC.</p>
+                    <p>La carte présentée dans l'onglet <strong>Analyse SIG</strong> permet d'identifier les <strong>zones urbaines denses insuffisamment couvertes</strong> en transport en commun — un outil directement pertinent pour orienter les décisions de planification du RTC.</p>
                     <p style="margin-top:8px">En croisant les <strong>isochrones de 15 minutes à pied</strong> avec la <strong>densité de population par aire de diffusion</strong>, on peut prioriser les zones où un nouvel arrêt ou une fréquence accrue aurait le plus grand impact sur l'achalandage.</p>
                 </div>
 
@@ -805,7 +808,7 @@
     <script>
     // ── NAVIGATION ──────────────────────────────────────────────
     var currentTab = 'cv';
-    var tabLabels = { cv: 'Mon profil', carte: 'Projet carto', rtc: 'Le RTC' };
+    var tabLabels = { cv: 'Mon profil', carte: 'Analyse SIG', rtc: 'Le RTC' };
 
     function switchTab(name) {
         if (name === currentTab) return;
