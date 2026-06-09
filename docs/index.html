@@ -837,7 +837,7 @@ function initMap() {
                 '<span style="color:#9C9C9C;font-size:11px">Accessible : </span><span style="font-size:11px;color:' + (p.ACCESSIBLE==='Oui'?'#10B981':'#9C9C9C') + '">' + (p.ACCESSIBLE||'—') + '</span></div>');
         },
         pointToLayer: function(f, ll) {
-            return L.circleMarker(ll, { radius:3, color:'rgba(35,65,105,1)', weight:1.5, fillColor:'rgba(72,123,182,0.9)', fillOpacity:0.9 });
+            return L.circleMarker(ll, { radius:2, color:'rgba(35,65,105,1)', weight:1, fillColor:'rgba(72,123,182,0.9)', fillOpacity:0.9 });
         }
     });
     layer_arrets.addTo(map);
