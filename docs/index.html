@@ -543,7 +543,7 @@
                 <div class="layer-toggle active" id="tog-parcours" onclick="toggleLayer2('parcours')">
                     <span class="layer-dot" style="background:#c9c36a;"></span>Parcours RTC
                 </div>
-                <div class="layer-toggle active" id="tog-arrets" onclick="toggleLayer2('arrets')">
+                <div class="layer-toggle" id="tog-arrets" onclick="toggleLayer2('arrets')">
                     <span class="layer-dot" style="background:rgba(72,123,182,0.9);border-radius:50%;"></span>Arrêts de bus
                 </div>
             </div>
@@ -840,7 +840,7 @@ function initMap() {
             return L.circleMarker(ll, { radius:2, color:'rgba(35,65,105,1)', weight:1, fillColor:'rgba(72,123,182,0.9)', fillOpacity:0.9 });
         }
     });
-    layer_arrets.addTo(map);
+    // layer_arrets désactivé par défaut — bouton pour activer
 
     setTimeout(function() { map.invalidateSize(); }, 150);
 }
