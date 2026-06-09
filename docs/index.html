@@ -263,6 +263,24 @@
         #cv-iframe { flex: 1; width: 100%; border: none; background: #525659; }
 
         /* CV Hero intro */
+        /* QR code block */
+        .cv-qr {
+            display: flex; flex-direction: column; align-items: center; gap: 4px;
+            flex-shrink: 0;
+        }
+        .cv-qr img {
+            width: 72px; height: 72px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .cv-qr span {
+            font-size: 10px; color: var(--text-2); font-family: var(--font-mono);
+            white-space: nowrap;
+        }
+        @media (max-width: 768px) {
+            .cv-qr img { width: 56px; height: 56px; }
+        }
+
         .cv-hero {
             background: var(--surface);
             border-bottom: 1px solid var(--border);
@@ -638,6 +656,10 @@
                         <span class="cv-tag">GTFS</span>
                     </div>
                 </div>
+                <a class="cv-qr" href="https://loicfourniersimon.github.io/rtc-accessibilite/" target="_blank" title="Ouvrir le projet">
+                    <img src="images/qr-code.png" alt="QR code — projet web">
+                    <span>Projet en ligne</span>
+                </a>
             </div>
             <div class="cv-toolbar">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--text-2)" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
